@@ -16,7 +16,7 @@ document.getElementById("js-clicker").addEventListener('click', () => {
             // create document fragment
             const frag = document.createDocumentFragment()
             birthdays.forEach(birthday => {
-                // create three text elements
+                // create three text elements for each item in the object
                 nameElement = elementFactory('p', birthday.name)
                 dateElement = elementFactory('p', birthday.birthday)
                 greetingElement = elementFactory('p', birthday.greeting)
@@ -29,7 +29,9 @@ document.getElementById("js-clicker").addEventListener('click', () => {
 
                 // append parent element to fragment
                 frag.appendChild(parentElement)
-            })
+            }) // closes loop through birthday array
+
+            // append the fragment that was built up to the output div on the dom
             document.getElementById('output').appendChild(frag)
 
         })
